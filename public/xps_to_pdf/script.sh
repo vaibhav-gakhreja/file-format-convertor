@@ -1,0 +1,1 @@
+xpstopdf --rx 50 --ry 50 input.xps input.pdf

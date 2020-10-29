@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<head>
+    <title>Pdf to text</title>
+</head>
+<body leftmargin="200px" topmargin="50px" style="background-color:lightskyblue;">
+    <h1>Upload the pdf to be converted to text</h1>
+    <form action="/pdf_to_text/fileupload" method="POST" enctype="multipart/form-data">
+        <br>
+        Page range of pdf that is to be converted : <input type="text" name="start" placeholder="start"> - <input type="text" name="end" placeholder="end">
+        <br><br>
+        <input type="checkbox" class="checkbox" name="layout" > check this if you want to preserve the layout of text as in pdf.
+        <br><br>
+        <input type="file" name="filetoupload"><br><br>
+        <button>Submit</button>
+    </form>
+</body>
+</html>

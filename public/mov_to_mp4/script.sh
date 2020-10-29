@@ -1,0 +1,1 @@
+ffmpeg -i input.mov output.mp4

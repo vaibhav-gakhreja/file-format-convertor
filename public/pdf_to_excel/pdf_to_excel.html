@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<head>
+    <title>Pdf to excel</title>
+</head>
+<body leftmargin="250px" topmargin="50px" style="background-color:lightskyblue;">
+    <h1>Upload the pdf to be converted to excel</h1>
+    <form action="/pdf_to_excel/fileupload" method="POST" enctype="multipart/form-data">
+        <p>
+            By default text separated by tabs in pdf will be given different columns in the excel sheet.
+        </p>
+        <input type="checkbox" name="convertSpacesToTabs">Check this if you want space separated text to be given different columns.</input><br><br>
+        <input type="file" name="filetoupload"><br><br>
+        <button>Submit</button>
+    </form>
+</body>
+</html>

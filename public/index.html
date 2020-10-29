@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Conversions-Home page</title>
+        <link rel="icon" href="/images/logo.jpeg" type="image/icon type">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <style>
+            h1 {
+                text-align: center;
+                padding: 0.75em;
+            }
+
+            table caption {
+                padding: 0.5em 0;
+            }
+
+            @media screen and (max-width: 767px) {
+                table caption {
+                    border-bottom: 1px solid #ddd;
+                }
+            }
+
+            .p {
+                text-align: center;
+                padding-top: 140px;
+                font-size: 14px;
+            }
+
+            .image {
+                height: 200px;
+                width: 200px;
+                margin-top: 20px;
+                float: left;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+        <div class="image">
+            <img src="/images/logo.jpeg" alt="Indian Institute of Technology Patna" height="200px" width="200px">
+        </div>
+        <h1>Indian Institute of Technology Patna</h1>
+        <h1>List of conversions</h1>
+            <br><input type="text" id="freeSearch" placeholder="Search Box"/>
+            <div id="sample"></div>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                    <td width="325px" height=50 align="center">Pdf</td>
+                    <td align="center">Audio</td>
+                    <td align="center">Video</td>
+                    <td align="center">Images</td>
+                    </tr>
+                </thead>
+                <script>
+                    var pdfsArray = [];
+
+                    var names =["pdf to text", "flac to mp3", "mov to mp4", "png to gif", "xlsx to pdf", "mp4 to mp3","flv to mp4", "mp4 to gif", "jpeg to gif","ppt to pdf","flv to mp3","jpeg to text","docx to pdf","wav to mp3","mkv to mp4","jpeg to png","xps to pdf","mp3 to wav","png to pdf","compress pdf","png to jpeg","djvu to pdf","pdf to png","pdfs merger","pdf to tiff","remove pages","pdf to ppm","epub to mobi","pdf to jpg","rotate 90 clockwise","rotate 180","rotate 90 anti clockwise","extract range from pdf","xls to pdf","text to pdf","doc to pdf","pdf to odg","pdf to doc","pdf to docx","pdf to excel","epub to pdf"];
+                    var hrefs =["pdf_to_text", "flac_to_mp3", "mov_to_mp4", "png_to_gif", "xlsx_to_pdf", "mp4_to_mp3","flv_to_mp4", "mp4_to_gif", "jpeg_to_gif","ppt_to_pdf","flv_to_mp3","jpeg_to_text","docx_to_pdf","wav_to_mp3","mkv_to_mp4","jpeg_to_png","xps_to_pdf","mp3_to_wav","png_to_pdf","compress_pdf","png_to_jpeg","djvu_to_pdf","pdf_to_png","pdfs_merger","pdf_to_tiff","remove_pages","pdf_to_ppm","epub_to_mobi","pdf_to_jpg","rotate_90cw","rotate_180","rotate_90acw","extract_rangepdf","xls_to_pdf","text_to_pdf","doc_to_pdf","pdf_to_odg","pdf_to_doc","pdf_to_docx","pdf_to_excel","epub_to_pdf"];
+
+                    var len = names.length;
+
+                    for(i=0; i<len; i++)
+                    {
+                        var temp = {};
+                        temp["name"] = names[i];
+                        temp["href"] = hrefs[i];
+                        pdfsArray.push(temp);
+                    }
+                
+                    //function to free search conversion formats
+                    $('#freeSearch').keyup(function()
+                    {
+                        $('#sample').html("");
+
+                        var val = $(this).val().trim();
+                        if(val != "")
+                        {
+                            var filteredNames = [];
+                            $(pdfsArray).each(function(idx)
+                            {
+                                if((pdfsArray[idx].name.trim()).includes(val))
+                                {
+                                    filteredNames.push(pdfsArray[idx]);
+                                }
+                            });
+
+                            var html = "";
+                            $(filteredNames).each(function()
+                            {
+                                var name = this.name;
+                                var href = this.href;
+                                html = ('<a href = ' + href + ' target="_blank" >' + name + '</a><br/>');
+                                $('#sample').append(html);                           
+                            });
+                            // console.log(html);
+                        }                       
+                    });                    
+                </script>
+
+                <tbody>
+                   
+                    <br><br>
+                    <tr>
+                        <td bgcolor="yellow" align="center" height=50>
+                            <a href="/pdf_to_text">pdf to text</a>
+                        </td>
+                        <td bgcolor="tomato" align="center" height=50>
+                            <a href="/flac_to_mp3">flac to mp3</a>
+                        </td>
+                        <td bgcolor="orange" align="center" height=50>
+                            <a href="/mov_to_mp4">mov to mp4</a>
+                        </td>
+                        <td bgcolor="lightskyblue" align="center" height=50>
+                            <a href="/png_to_gif">png to gif</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="chartreuse" align="center" height=50>
+                            <a href="/xlsx_to_pdf">xlsx to pdf</a>
+                        </td>
+                        <td bgcolor="cyan" align="center" height=50>
+                            <a href="/mp4_to_mp3">mp4 to mp3</a>
+                        </td>
+                        <td bgcolor="peachpuff" align="center" height=50>
+                            <a href="/flv_to_mp4">flv to mp4</a>
+                        </td>
+                        <td bgcolor="lightblue" align="center" height=50>
+                            <a href="/jpeg_to_gif">jpeg to gif</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="pink" align="center" height=50>
+                            <a href="/ppt_to_pdf">ppt to pdf</a>
+                        </td>
+                        <td bgcolor="lightgreen" align="center" height=50>
+                            <a href="/flv_to_mp3">flv to mp3</a>
+                        </td>
+                        <td bgcolor="yellow" align="center" height=50>
+                            <a href="/mp4_to_gif">mp4 to gif</a>
+                        </td>
+                        <td bgcolor="magenta" align="center" height=50>
+                            <a href="/jpeg_to_text">jpeg_to_text</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="tan" align="center" height=50>
+                            <a href="/docx_to_pdf">docx to pdf</a>
+                        </td>
+                        <td bgcolor="powderblue" align="center" height=50>
+                            <a href="/wav_to_mp3">wav to mp3</a>
+                        </td>
+                        <td bgcolor="pink" align="center" height=50>
+                            <a href="/mkv_to_mp4">mkv to mp4</a>
+                        </td>
+                        <td bgcolor="lavender" align="center" height=50>
+                            <a href="/jpeg_to_png">jpeg to png</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="lightblue" align="center" height=50>
+                            <a href="/xps_to_pdf">xps to pdf</a>
+                        </td>
+                        <td bgcolor="khaki" align="center" height=50>
+                            <a href="/mp3_to_wav">mp3 to wav</a>
+                        </td>
+                        <td>
+
+                        </td>
+                        <td bgcolor="coral" align="center" height=50>
+                            <a href="/png_to_pdf">png to pdf</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="aqua" align="center" height=50>
+                            <a href="/compress_pdf">compress pdf</a>
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                        <td bgcolor="crimson" align="center" height=50>
+                            <a href="/png_to_jpeg">png to jpeg</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="yellow" align="center" height=50>
+                            <a href="/djvu_to_pdf">djvu to pdf</a>
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                        <td bgcolor="tomato" align="center" height=50>
+                            <a href="/pdf_to_png">pdf to png</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="lightskyblue" align="center" height=50>
+                            <a href="/pdfs_merger">merge two pdfs into one</a>
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                        <td bgcolor="chartreuse" align="center" height=50>
+                            <a href="/pdf_to_tiff">pdf to tiff</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="lavender" align="center" height=50>
+                            <a href="/remove_pages">remove a page range from pdf</a>
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                        <td bgcolor="pink" align="center" height=50>
+                            <a href="/pdf_to_ppm">pdf to ppm</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="lightblue" align="center" height=50>
+                            <a href="/epub_to_mobi">epub to mobi</a>
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                        <td bgcolor="orange" align="center" height=50>
+                            <a href="/pdf_to_jpg">pdf to jpg</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="khaki" align="center" height=50>
+                            <a href="/rotate_90cw">rotate a page range by 90 clockwise in a pdf</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="lightgrey" align="center" height=50>
+                            <a href="/rotate_180">rotate a page range by 180 degree in a pdf</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="tomato" align="center" height=50>
+                            <a href="/rotate_90acw">rotate a page range by 90 anti clockwise in a pdf</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="aqua" align="center" height=50>
+                            <a href="/extract_rangepdf">extract a page range from a pdf</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="peachpuff" align="center" height=50>
+                            <a href="/xls_to_pdf">xls to pdf</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="cyan" align="center" height=50>
+                            <a href="/text_to_pdf">text to pdf</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="greenyellow" align="center" height=50>
+                            <a href="/doc_to_pdf">doc to pdf</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="cadetblue" align="center" height=50>
+                            <a href="/pdf_to_odg">pdf to odg</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="chartreuse" align="center" height=50>
+                            <a href="/pdf_to_doc">pdf to doc</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="yellow" align="center" height=50>
+                            <a href="/pdf_to_docx">pdf to docx</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="pink" align="center" height=50>
+                            <a href="/pdf_to_excel">pdf to excel</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="tan" align="center" height=50>
+                            <a href="/epub_to_pdf">epub to pdf</a>
+                        </td>
+                    </tr>
+                </tbody>
+                <!-- <tfoot>
+                    <tr>
+                    <td colspan="5" class="text-center">Data retrieved from <a href="http://www.infoplease.com/ipa/A0855611.html" target="_blank">infoplease</a> and <a href="http://www.worldometers.info/world-population/population-by-country/" target="_blank">worldometers</a>.</td></tr>
+                    </tr>
+                </tfoot> -->
+            </table>
+        </div>    
+    </body>
+</html>

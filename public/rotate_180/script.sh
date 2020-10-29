@@ -1,0 +1,1 @@
+pdftk input.pdf cat 1-9 10-20west 21-end output output.pdf

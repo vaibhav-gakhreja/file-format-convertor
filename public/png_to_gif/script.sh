@@ -1,0 +1,1 @@
+mogrify -format gif input.png

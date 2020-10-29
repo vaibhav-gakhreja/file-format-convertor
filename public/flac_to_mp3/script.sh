@@ -1,0 +1,1 @@
+ffmpeg -hide_banner -loglevel panic -i input.flac output.mp3

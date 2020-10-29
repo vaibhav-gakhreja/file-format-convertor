@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+    <title>Pdf to ppm</title>
+</head>
+<body leftmargin="250px" topmargin="50px" style="background-color:lightskyblue;">
+    <h1>Upload the pdf to be converted to ppm</h1>
+    <form action="/pdf_to_ppm/fileupload" method="POST" enctype="multipart/form-data">
+        <p>
+            Enter the page range to be converted to ppm(By default it will convert the entire pdf)<br><br>
+            <input type="text" name="start"> - <input type="text" name="end">
+        </p>
+        <p>
+            Enter the DPI of the converted ppm files(By default its 150)<br><br>
+            <input type="text" name="DPI"> 
+        </p>
+        <input type="file" name="filetoupload"><br><br>
+        <button>Submit</button>
+    </form>
+</body>
+</html>

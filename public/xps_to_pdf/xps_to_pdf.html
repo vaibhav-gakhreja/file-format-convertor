@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+    <title>xps to pdf</title>
+</head>
+<body leftmargin="250px" topmargin="50px" style="background-color:lightskyblue;">
+    <h1>Upload the xps file to be converted</h1>
+    <form action="/xps_to_pdf/fileupload" method="POST" enctype="multipart/form-data">
+        Enter the range of pages to be converted to pdf (by default, it converts the entire document)<br><br>
+        <input type="text" name="first"></input> - <input type="text" name="last"></input><br><br>
+        Enter Horizontal resolution in PPI (Pixels Per Inch). The default is 150 PPI.<br><br>
+        <input type="text" name="rx"><br><br>
+        Enter Vertical resolution in PPI (Pixels Per Inch). The default is 150 PPI.<br><br>
+        <input type="text" name="ry"><br><br>
+        <input type="file" name="filetoupload"><br><br>
+        <button>Upload</button>
+    </form>
+</body>
+</html>

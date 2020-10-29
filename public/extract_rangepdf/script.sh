@@ -1,0 +1,1 @@
+pdftk input.pdf cat 10-20 output output.pdf
