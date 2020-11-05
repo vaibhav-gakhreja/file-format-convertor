@@ -2,8 +2,8 @@ const shell = require('shelljs')
 const fs = require('fs')
 
 const execution = (scriptName,res)=>{
-    shell.exec('../public/pdf_to_jpg/' + scriptName,()=>{
-        shell.exec('../public/pdf_to_jpg/scriptToCompress.sh',()=>{
+    shell.exec('./public/pdf_to_jpg/' + scriptName,()=>{
+        shell.exec('./public/pdf_to_jpg/scriptToCompress.sh',()=>{
             res.download('./output.tar.gz','output.tar.gz',()=>{
                 fs.unlink('./input.pdf',(err)=>{
                     if(err){
@@ -11,7 +11,7 @@ const execution = (scriptName,res)=>{
                         return res.end()
                     }
                 })
-                shell.exec('../public/pdf_to_jpg/' + 'scriptToDel.sh')
+                shell.exec('./public/pdf_to_jpg/' + 'scriptToDel.sh')
             })
         })
     })

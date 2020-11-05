@@ -15,7 +15,7 @@ const pdf_to_odg = (req,res)=>{
                 res.send('Error occured, please try again!')
                 return res.end()
             }
-            shell.exec('../public/pdf_to_odg/script.sh',()=>{
+            shell.exec('./public/pdf_to_odg/script.sh',()=>{
                 res.download('./output.tar.gz','output.tar.gz',()=>{
                     fs.unlink('./input.pdf',(err)=>{
                         if(err){
@@ -23,7 +23,7 @@ const pdf_to_odg = (req,res)=>{
                             return res.end()
                         }
                     })
-                    shell.exec('../public/pdf_to_odg/scriptToDel.sh')
+                    shell.exec('./public/pdf_to_odg/scriptToDel.sh')
                 })
             })
         })

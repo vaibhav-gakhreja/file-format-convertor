@@ -23,15 +23,15 @@ const pdf_to_tiff = (req,res)=>{
                 DPI = 150
             }
             if(start===0&&end===0){
-                fs.writeFileSync('../public/pdf_to_tiff/script.sh','pdftoppm -tiff -rx ' + DPI + ' -ry ' + DPI + ' input.pdf ./output/output')
+                fs.writeFileSync('./public/pdf_to_tiff/script.sh','pdftoppm -tiff -rx ' + DPI + ' -ry ' + DPI + ' input.pdf ./output/output')
             }else if(start!==0&&end===0){
-                fs.writeFileSync('../public/pdf_to_tiff/script.sh','pdftoppm -tiff -f ' + start + ' -rx ' + DPI + ' -ry ' + DPI + ' input.pdf ./output/output')
+                fs.writeFileSync('./public/pdf_to_tiff/script.sh','pdftoppm -tiff -f ' + start + ' -rx ' + DPI + ' -ry ' + DPI + ' input.pdf ./output/output')
             }else if(start===0&&end!==0){
-                fs.writeFileSync('../public/pdf_to_tiff/script.sh','pdftoppm -tiff -l ' + end + ' -rx ' + DPI + ' -ry ' + DPI + ' input.pdf ./output/output')
+                fs.writeFileSync('./public/pdf_to_tiff/script.sh','pdftoppm -tiff -l ' + end + ' -rx ' + DPI + ' -ry ' + DPI + ' input.pdf ./output/output')
             }else if(start!==0&&end!==0){
-                fs.writeFileSync('../public/pdf_to_tiff/script.sh','pdftoppm -tiff -f ' + start + ' -l ' + end +' -rx ' + DPI + ' -ry ' + DPI + ' input.pdf ./output/output')
+                fs.writeFileSync('./public/pdf_to_tiff/script.sh','pdftoppm -tiff -f ' + start + ' -l ' + end +' -rx ' + DPI + ' -ry ' + DPI + ' input.pdf ./output/output')
             }
-            shell.exec('../public/pdf_to_png/scriptToMkdir.sh',()=>{
+            shell.exec('./public/pdf_to_png/scriptToMkdir.sh',()=>{
                 execution('script.sh',res)
             })
         })

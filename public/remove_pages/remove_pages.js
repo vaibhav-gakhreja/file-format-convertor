@@ -17,8 +17,8 @@ const remove_pages = (req,res)=>{
             }
             const start=Number(fields.start);
             const end=Number(fields.end);
-            fs.writeFile('../public/remove_pages/script.sh','pdftk input.pdf cat 1-' + (start-1) + ' ' + (end+1) + '-end output output.pdf',()=>{
-                shell.exec('../public/remove_pages/script.sh',()=>{
+            fs.writeFile('./public/remove_pages/script.sh','pdftk input.pdf cat 1-' + (start-1) + ' ' + (end+1) + '-end output output.pdf',()=>{
+                shell.exec('./public/remove_pages/script.sh',()=>{
                     res.download('./output.pdf','output.pdf',()=>{
                         fs.unlink('./input.pdf',(err)=>{
                             if(err){

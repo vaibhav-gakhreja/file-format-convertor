@@ -2,7 +2,7 @@ const shell = require('shelljs')
 const fs = require('fs')
 
 const execution = (scriptName,res)=>{
-    shell.exec('../public/pdf_to_text/' + scriptName,()=>{
+    shell.exec('./public/pdf_to_text/' + scriptName,()=>{
         res.download('./converted_output.txt','converted_output.txt',()=>{
             fs.unlink('./input.pdf',(err)=>{
                 if(err){

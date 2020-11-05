@@ -15,7 +15,7 @@ const compress_pdf = (req,res)=>{
                 res.send('Error occured, please try again!')
                 return res.end()
             }
-            shell.exec('../public/compress_pdf/script.sh',()=>{
+            shell.exec('./public/compress_pdf/script.sh',()=>{
                 res.download('./compressed_output.pdf','compressed_'+ files.filetoupload.name,()=>{
                     fs.unlink('./input.pdf',(err)=>{
                         if(err){

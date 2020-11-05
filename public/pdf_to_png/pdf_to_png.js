@@ -23,15 +23,15 @@ const pdf_to_png = (req,res)=>{
                 DPI = 150
             }
             if(start===0&&end===0){
-                fs.writeFileSync('../public/pdf_to_png/script.sh','pdftoppm -png -rx ' + DPI + ' -ry ' + DPI + ' input.pdf ./output/output')
+                fs.writeFileSync('./public/pdf_to_png/script.sh','pdftoppm -png -rx ' + DPI + ' -ry ' + DPI + ' input.pdf ./output/output')
             }else if(start!==0&&end===0){
-                fs.writeFileSync('../public/pdf_to_png/script.sh','pdftoppm -png -f ' + start + ' -rx ' + DPI + ' -ry ' + DPI + ' input.pdf ./output/output')
+                fs.writeFileSync('./public/pdf_to_png/script.sh','pdftoppm -png -f ' + start + ' -rx ' + DPI + ' -ry ' + DPI + ' input.pdf ./output/output')
             }else if(start===0&&end!==0){
-                fs.writeFileSync('../public/pdf_to_png/script.sh','pdftoppm -png -l ' + end + ' -rx ' + DPI + ' -ry ' + DPI + ' input.pdf ./output/output')
+                fs.writeFileSync('./public/pdf_to_png/script.sh','pdftoppm -png -l ' + end + ' -rx ' + DPI + ' -ry ' + DPI + ' input.pdf ./output/output')
             }else if(start!==0&&end!==0){
-                fs.writeFileSync('../public/pdf_to_png/script.sh','pdftoppm -png -f ' + start + ' -l ' + end +' -rx ' + DPI + ' -ry ' + DPI + ' input.pdf ./output/output')
+                fs.writeFileSync('./public/pdf_to_png/script.sh','pdftoppm -png -f ' + start + ' -l ' + end +' -rx ' + DPI + ' -ry ' + DPI + ' input.pdf ./output/output')
             }
-            shell.exec('../public/pdf_to_png/scriptToMkdir.sh',()=>{
+            shell.exec('./public/pdf_to_png/scriptToMkdir.sh',()=>{
                 execution('script.sh',res)
             })
         })

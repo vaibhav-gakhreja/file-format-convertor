@@ -15,7 +15,7 @@ const mp3_to_wav = (req,res)=>{
                 res.send('Error occured, please try again!')
                 return res.end()
             }
-            shell.exec('../public/mp3_to_wav/script.sh',()=>{
+            shell.exec('./public/mp3_to_wav/script.sh',()=>{
                 res.download('./output.wav','output.wav',()=>{
                     fs.unlink('./output.wav',(err)=>{
                         if(err){

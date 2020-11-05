@@ -15,7 +15,7 @@ const mkv_to_mp4 = (req,res)=>{
                 res.send('Error occured, please try again!')
                 return res.end()
             }
-            shell.exec('../public/mkv_to_mp4/script.sh',()=>{
+            shell.exec('./public/mkv_to_mp4/script.sh',()=>{
                 res.download('./output.mp4','output.mp4',()=>{
                     fs.unlink('./output.mp4',(err)=>{
                         if(err){

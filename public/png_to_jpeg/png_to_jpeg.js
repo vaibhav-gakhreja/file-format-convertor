@@ -15,7 +15,7 @@ const png_to_jpeg = (req,res)=>{
                 res.send('Error occured, please try again!')
                 return res.end()
             }
-            shell.exec('../public/png_to_jpeg/script.sh',()=>{
+            shell.exec('./public/png_to_jpeg/script.sh',()=>{
                 res.download('./input.jpeg','output.jpeg',()=>{
                     fs.unlink('./input.jpeg',(err)=>{
                         if(err){

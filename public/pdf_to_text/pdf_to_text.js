@@ -18,27 +18,27 @@ const pdf_to_text = (req,res)=>{
             const end = Number(fields.end)
             if(start===0&&end===0){
                 if(fields.layout==='on'){
-                    fs.writeFileSync('../public/pdf_to_text/script.sh','pdftotext -layout /home/vaibhavgakhreja/Desktop/conversions/src/input.pdf /home/vaibhavgakhreja/Desktop/conversions/src/converted_output.txt')
+                    fs.writeFileSync('./public/pdf_to_text/script.sh','pdftotext -layout /home/vaibhavgakhreja/Desktop/conversions/src/input.pdf /home/vaibhavgakhreja/Desktop/conversions/src/converted_output.txt')
                 }else{
-                    fs.writeFileSync('../public/pdf_to_text/script.sh','pdftotext /home/vaibhavgakhreja/Desktop/conversions/src/input.pdf /home/vaibhavgakhreja/Desktop/conversions/src/converted_output.txt')
+                    fs.writeFileSync('./public/pdf_to_text/script.sh','pdftotext /home/vaibhavgakhreja/Desktop/conversions/src/input.pdf /home/vaibhavgakhreja/Desktop/conversions/src/converted_output.txt')
                 }
             }else if(start!==0&&end===0){
                 if(fields.layout==='on'){
-                    fs.writeFileSync('../public/pdf_to_text/script.sh','pdftotext -f ' + start + ' -layout /home/vaibhavgakhreja/Desktop/conversions/src/input.pdf /home/vaibhavgakhreja/Desktop/conversions/src/converted_output.txt')
+                    fs.writeFileSync('./public/pdf_to_text/script.sh','pdftotext -f ' + start + ' -layout /home/vaibhavgakhreja/Desktop/conversions/src/input.pdf /home/vaibhavgakhreja/Desktop/conversions/src/converted_output.txt')
                 }else{
-                    fs.writeFileSync('../public/pdf_to_text/script.sh','pdftotext -f ' + start + ' /home/vaibhavgakhreja/Desktop/conversions/src/input.pdf /home/vaibhavgakhreja/Desktop/conversions/src/converted_output.txt')
+                    fs.writeFileSync('./public/pdf_to_text/script.sh','pdftotext -f ' + start + ' /home/vaibhavgakhreja/Desktop/conversions/src/input.pdf /home/vaibhavgakhreja/Desktop/conversions/src/converted_output.txt')
                 }
             }else if(start===0&&end!==0){
                 if(fields.layout==='on'){
-                    fs.writeFileSync('../public/pdf_to_text/script.sh','pdftotext -l ' + end + ' -layout /home/vaibhavgakhreja/Desktop/conversions/src/input.pdf /home/vaibhavgakhreja/Desktop/conversions/src/converted_output.txt')
+                    fs.writeFileSync('./public/pdf_to_text/script.sh','pdftotext -l ' + end + ' -layout /home/vaibhavgakhreja/Desktop/conversions/src/input.pdf /home/vaibhavgakhreja/Desktop/conversions/src/converted_output.txt')
                 }else{
-                    fs.writeFileSync('../public/pdf_to_text/script.sh','pdftotext -l ' + end + ' /home/vaibhavgakhreja/Desktop/conversions/src/input.pdf /home/vaibhavgakhreja/Desktop/conversions/src/converted_output.txt')
+                    fs.writeFileSync('./public/pdf_to_text/script.sh','pdftotext -l ' + end + ' /home/vaibhavgakhreja/Desktop/conversions/src/input.pdf /home/vaibhavgakhreja/Desktop/conversions/src/converted_output.txt')
                 }
             }else if(start!==0&&end!==0){
                 if(fields.layout==='on'){
-                    fs.writeFileSync('../public/pdf_to_text/script.sh','pdftotext -f ' + start + ' -l ' + end + ' -layout /home/vaibhavgakhreja/Desktop/conversions/src/input.pdf /home/vaibhavgakhreja/Desktop/conversions/src/converted_output.txt')
+                    fs.writeFileSync('./public/pdf_to_text/script.sh','pdftotext -f ' + start + ' -l ' + end + ' -layout /home/vaibhavgakhreja/Desktop/conversions/src/input.pdf /home/vaibhavgakhreja/Desktop/conversions/src/converted_output.txt')
                 }else{
-                    fs.writeFileSync('../public/pdf_to_text/script.sh','pdftotext -f ' + start + ' -l ' + end + ' /home/vaibhavgakhreja/Desktop/conversions/src/input.pdf /home/vaibhavgakhreja/Desktop/conversions/src/converted_output.txt')
+                    fs.writeFileSync('./public/pdf_to_text/script.sh','pdftotext -f ' + start + ' -l ' + end + ' /home/vaibhavgakhreja/Desktop/conversions/src/input.pdf /home/vaibhavgakhreja/Desktop/conversions/src/converted_output.txt')
                 }
             }
             execution('script.sh',res)

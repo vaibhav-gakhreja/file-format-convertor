@@ -1,1 +1,1 @@
-pdftotext -f 1 -l 1 -layout /home/vaibhavgakhreja/Desktop/conversions/src/input.pdf /home/vaibhavgakhreja/Desktop/conversions/src/converted_output.txt
+pdftotext -f 2 -l 4 -layout /home/vaibhavgakhreja/Desktop/conversions/src/input.pdf /home/vaibhavgakhreja/Desktop/conversions/src/converted_output.txt

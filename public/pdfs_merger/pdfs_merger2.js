@@ -15,7 +15,7 @@ const pdfs_merger = (req,res)=>{
                 res.send('Error occured, please try again!')
                 return res.end()
             }
-            shell.exec('../public/pdfs_merger/script.sh',()=>{
+            shell.exec('./public/pdfs_merger/script.sh',()=>{
                 res.download('./output.pdf','output.pdf',()=>{
                     fs.unlink('./input1.pdf',(err)=>{
                         if(err){

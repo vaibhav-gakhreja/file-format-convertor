@@ -16,7 +16,7 @@ const pdf_to_excel = (req,res)=>{
                 return res.end()
             }
             if(!fields.convertSpacesToTabs){
-                shell.exec('../public/pdf_to_excel/script2.sh',()=>{
+                shell.exec('./public/pdf_to_excel/script2.sh',()=>{
                     res.download('./output.xls','output.xls',()=>{
                         fs.unlink('./input.pdf',(err)=>{
                             if(err){
@@ -45,7 +45,7 @@ const pdf_to_excel = (req,res)=>{
                     })
                 })
             }else{
-                shell.exec('../public/pdf_to_excel/script1.sh',()=>{
+                shell.exec('./public/pdf_to_excel/script1.sh',()=>{
                     res.download('./output.xls','output.xls',()=>{
                         fs.unlink('./input.pdf',(err)=>{
                             if(err){

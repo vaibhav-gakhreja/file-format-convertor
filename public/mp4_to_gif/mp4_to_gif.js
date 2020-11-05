@@ -15,7 +15,7 @@ const mp4_to_gif = (req,res)=>{
                 res.send('Error occured, please try again!')
                 return res.end()
             }
-            shell.exec('../public/mp4_to_gif/script.sh',()=>{
+            shell.exec('./public/mp4_to_gif/script.sh',()=>{
                 res.download('./output.gif','output.gif',()=>{
                     fs.unlink('./output.gif',(err)=>{
                         if(err){

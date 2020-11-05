@@ -15,7 +15,7 @@ const png_to_gif = (req,res)=>{
                 res.send('Error occured, please try again!')
                 return res.end()
             }
-            shell.exec('../public/png_to_gif/script.sh',()=>{
+            shell.exec('./public/png_to_gif/script.sh',()=>{
                 res.download('./input.gif','output.gif',()=>{
                     fs.unlink('./input.gif',(err)=>{
                         if(err){

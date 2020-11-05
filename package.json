@@ -14,6 +14,7 @@
     "express": "^4.17.1",
     "formidable": "^1.2.1",
     "fs": "0.0.1-security",
+    "fs-extra": "^9.0.1",
     "pdfjs-dist": "^2.2.228",
     "shelljs": "^0.8.3"
   }

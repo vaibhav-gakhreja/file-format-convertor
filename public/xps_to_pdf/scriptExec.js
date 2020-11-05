@@ -2,7 +2,7 @@ const shell = require('shelljs')
 const fs = require('fs')
 
 const execution = (res)=>{
-    shell.exec('../public/xps_to_pdf/script.sh',()=>{
+    shell.exec('./public/xps_to_pdf/script.sh',()=>{
         res.download('./input.pdf','output.pdf',()=>{
             fs.unlink('./input.xps',(err)=>{
                 if(err){

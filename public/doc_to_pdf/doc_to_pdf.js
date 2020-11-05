@@ -15,7 +15,7 @@ const doc_to_pdf = (req,res)=>{
                 res.send('Error occured, please try again!')
                 return res.end()
             }
-            shell.exec('../public/doc_to_pdf/script.sh',()=>{
+            shell.exec('./public/doc_to_pdf/script.sh',()=>{
                 res.download('./input.pdf','output.pdf',()=>{
                     fs.unlink('./input.doc',(err)=>{
                         if(err){

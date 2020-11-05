@@ -18,8 +18,8 @@ const extract_rangepdf = (req,res)=>{
             }
             const start=Number(fields.start)
             const end=Number(fields.end)
-            fs.writeFileSync('../public/extract_rangepdf/script.sh','pdftk input.pdf cat ' + start + '-' + end + ' output output.pdf')
-            shell.exec('../public/extract_rangepdf/script.sh',()=>{
+            fs.writeFileSync('./public/extract_rangepdf/script.sh','pdftk input.pdf cat ' + start + '-' + end + ' output output.pdf')
+            shell.exec('./public/extract_rangepdf/script.sh',()=>{
                 res.download('./output.pdf','output.pdf',()=>{
                     fs.unlink('./input.pdf',(err)=>{
                         if(err){

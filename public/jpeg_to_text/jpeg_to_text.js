@@ -15,7 +15,7 @@ const jpeg_to_text = (req,res)=>{
                 res.send('Error occured, please try again!')
                 return res.end()
             }
-            shell.exec('../public/jpeg_to_text/script.sh',()=>{
+            shell.exec('./public/jpeg_to_text/script.sh',()=>{
                 res.download('./output.txt','output.txt',()=>{
                     fs.unlink('./output.txt',(err)=>{
                         if(err){

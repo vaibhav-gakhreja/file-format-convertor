@@ -21,43 +21,43 @@ const xps_to_pdf = (req,res)=>{
             }
             if(fields.rx!==''&&fields.ry!==''){
                 if(fields.first!==''&&fields.last!==''){
-                    fs.writeFileSync('../public/xps_to_pdf/script.sh','xpstopdf --rx ' + rx + ' --ry ' + ry + ' -f ' + first + ' -l ' + last + ' input.xps input.pdf')
+                    fs.writeFileSync('./public/xps_to_pdf/script.sh','xpstopdf --rx ' + rx + ' --ry ' + ry + ' -f ' + first + ' -l ' + last + ' input.xps input.pdf')
                 }else if(fields.first!==''){
-                    fs.writeFileSync('../public/xps_to_pdf/script.sh','xpstopdf --rx ' + rx + ' --ry ' + ry + ' -f ' + first + ' input.xps input.pdf')
+                    fs.writeFileSync('./public/xps_to_pdf/script.sh','xpstopdf --rx ' + rx + ' --ry ' + ry + ' -f ' + first + ' input.xps input.pdf')
                 }else if(fields.last!==''){
-                    fs.writeFileSync('../public/xps_to_pdf/script.sh','xpstopdf --rx ' + rx + ' --ry ' + ry + ' -l ' + last + ' input.xps input.pdf')
+                    fs.writeFileSync('./public/xps_to_pdf/script.sh','xpstopdf --rx ' + rx + ' --ry ' + ry + ' -l ' + last + ' input.xps input.pdf')
                 }else{
-                    fs.writeFileSync('../public/xps_to_pdf/script.sh','xpstopdf --rx ' + rx + ' --ry ' + ry + ' input.xps input.pdf')
+                    fs.writeFileSync('./public/xps_to_pdf/script.sh','xpstopdf --rx ' + rx + ' --ry ' + ry + ' input.xps input.pdf')
                 }
             }else if(fields.rx!==''){
                 if(fields.first!==''&&fields.last!==''){
-                    fs.writeFileSync('../public/xps_to_pdf/script.sh','xpstopdf --rx ' + rx + ' -f ' + first + ' -l ' + last + ' input.xps input.pdf')
+                    fs.writeFileSync('./public/xps_to_pdf/script.sh','xpstopdf --rx ' + rx + ' -f ' + first + ' -l ' + last + ' input.xps input.pdf')
                 }else if(fields.first!==''){
-                    fs.writeFileSync('../public/xps_to_pdf/script.sh','xpstopdf --rx ' + rx + ' -f ' + first + ' input.xps input.pdf')
+                    fs.writeFileSync('./public/xps_to_pdf/script.sh','xpstopdf --rx ' + rx + ' -f ' + first + ' input.xps input.pdf')
                 }else if(fields.last!==''){
-                    fs.writeFileSync('../public/xps_to_pdf/script.sh','xpstopdf --rx ' + rx + ' -l ' + last + ' input.xps input.pdf')
+                    fs.writeFileSync('./public/xps_to_pdf/script.sh','xpstopdf --rx ' + rx + ' -l ' + last + ' input.xps input.pdf')
                 }else{
-                    fs.writeFileSync('../public/xps_to_pdf/script.sh','xpstopdf --rx ' + rx + ' input.xps input.pdf')
+                    fs.writeFileSync('./public/xps_to_pdf/script.sh','xpstopdf --rx ' + rx + ' input.xps input.pdf')
                 }
             }else if(fields.ry!==''){
                 if(fields.first!==''&&fields.last!==''){
-                    fs.writeFileSync('../public/xps_to_pdf/script.sh','xpstopdf --ry ' + ry + ' -f ' + first + ' -l ' + last + ' input.xps input.pdf')
+                    fs.writeFileSync('./public/xps_to_pdf/script.sh','xpstopdf --ry ' + ry + ' -f ' + first + ' -l ' + last + ' input.xps input.pdf')
                 }else if(fields.first!==''){
-                    fs.writeFileSync('../public/xps_to_pdf/script.sh','xpstopdf --ry ' + ry + ' -f ' + first + ' input.xps input.pdf')
+                    fs.writeFileSync('./public/xps_to_pdf/script.sh','xpstopdf --ry ' + ry + ' -f ' + first + ' input.xps input.pdf')
                 }else if(fields.last!==''){
-                    fs.writeFileSync('../public/xps_to_pdf/script.sh','xpstopdf --ry ' + ry + ' -l ' + last + ' input.xps input.pdf')
+                    fs.writeFileSync('./public/xps_to_pdf/script.sh','xpstopdf --ry ' + ry + ' -l ' + last + ' input.xps input.pdf')
                 }else{
-                    fs.writeFileSync('../public/xps_to_pdf/script.sh','xpstopdf --ry ' + ry + ' input.xps input.pdf')
+                    fs.writeFileSync('./public/xps_to_pdf/script.sh','xpstopdf --ry ' + ry + ' input.xps input.pdf')
                 }
             }else{
                 if(fields.first!==''&&fields.last!==''){
-                    fs.writeFileSync('../public/xps_to_pdf/script.sh','xpstopdf -f ' + first + ' -l ' + last + ' input.xps input.pdf')
+                    fs.writeFileSync('./public/xps_to_pdf/script.sh','xpstopdf -f ' + first + ' -l ' + last + ' input.xps input.pdf')
                 }else if(fields.first!==''){
-                    fs.writeFileSync('../public/xps_to_pdf/script.sh','xpstopdf -f ' + first + ' input.xps input.pdf')
+                    fs.writeFileSync('./public/xps_to_pdf/script.sh','xpstopdf -f ' + first + ' input.xps input.pdf')
                 }else if(fields.last!==''){
-                    fs.writeFileSync('../public/xps_to_pdf/script.sh','xpstopdf -l ' + last + ' input.xps input.pdf')
+                    fs.writeFileSync('./public/xps_to_pdf/script.sh','xpstopdf -l ' + last + ' input.xps input.pdf')
                 }else{
-                    fs.writeFileSync('../public/xps_to_pdf/script.sh','xpstopdf input.xps input.pdf')
+                    fs.writeFileSync('./public/xps_to_pdf/script.sh','xpstopdf input.xps input.pdf')
                 }
             }
             execution(res)

@@ -22,18 +22,18 @@ const rotate_90 = (req,res)=>{
                 var numPages = Number(doc.numPages);
                 if(start>1&&end<numPages)
                 {
-                    fs.writeFileSync('../public/rotate_90cw/script.sh','pdftk input.pdf cat 1-' + (start-1) + ' ' + start + '-' + end + 'south ' + (end+1) + '-end output output.pdf');
+                    fs.writeFileSync('./public/rotate_90cw/script.sh','pdftk input.pdf cat 1-' + (start-1) + ' ' + start + '-' + end + 'south ' + (end+1) + '-end output output.pdf');
                 }else if(start==1&&end<numPages)
                 {
-                    fs.writeFileSync('../public/rotate_90cw/script.sh','pdftk input.pdf cat ' + start + '-' + end + 'south ' + (end+1) + '-end output output.pdf');
+                    fs.writeFileSync('./public/rotate_90cw/script.sh','pdftk input.pdf cat ' + start + '-' + end + 'south ' + (end+1) + '-end output output.pdf');
                 }else if(start>1&&end==numPages)
                 {
-                    fs.writeFileSync('../public/rotate_90cw/script.sh','pdftk input.pdf cat 1-' + (start-1) + ' ' + start + '-' + end + 'south output output.pdf');
+                    fs.writeFileSync('./public/rotate_90cw/script.sh','pdftk input.pdf cat 1-' + (start-1) + ' ' + start + '-' + end + 'south output output.pdf');
                 }else
                 {
-                    fs.writeFileSync('../public/rotate_90cw/script.sh','pdftk input.pdf cat ' + start + '-' + end + 'south output output.pdf');
+                    fs.writeFileSync('./public/rotate_90cw/script.sh','pdftk input.pdf cat ' + start + '-' + end + 'south output output.pdf');
                 }
-                shell.exec('../public/rotate_90cw/script.sh',()=>{
+                shell.exec('./public/rotate_90cw/script.sh',()=>{
                     res.download('./output.pdf','output.pdf',()=>{
                         fs.unlink('./input.pdf',(err)=>{
                             if(err){

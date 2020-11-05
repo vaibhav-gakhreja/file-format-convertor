@@ -15,7 +15,7 @@ const mp4_to_mp3 = (req,res)=>{
                 res.send('Error occured, please try again!')
                 return res.end()
             }
-            shell.exec('../public/mp4_to_mp3/script.sh',()=>{
+            shell.exec('./public/mp4_to_mp3/script.sh',()=>{
                 res.download('./output.mp3','output.mp3',()=>{
                     fs.unlink('./output.mp3',(err)=>{
                         if(err){

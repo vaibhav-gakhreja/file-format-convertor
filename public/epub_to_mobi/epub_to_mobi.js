@@ -15,7 +15,7 @@ const epub_to_mobi = (req,res)=>{
                 res.send('Error occured, please try again!')
                 return res.end()
             }
-            shell.exec('../public/epub_to_mobi/script.sh',()=>{
+            shell.exec('./public/epub_to_mobi/script.sh',()=>{
                 res.download('./input.mobi','output.mobi',()=>{
                     fs.unlink('./input.mobi',(err)=>{
                         if(err){
