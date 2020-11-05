@@ -1,5 +1,5 @@
 const formidable = require('formidable')
-const fs = require('fs')
+const fs = require('fs-extra')
 const shell = require('shelljs')
 
 const wav_to_mp3 = (req,res)=>{
@@ -10,7 +10,7 @@ const wav_to_mp3 = (req,res)=>{
         }
         var oldpath = files.filetoupload.path
         var newpath = './input.wav'
-        fs.rename(oldpath, newpath, function(err){
+        fs.copy(oldpath, newpath, function(err){
             if(err){
                 res.send('Error occured, please try again!')
                 return res.end()

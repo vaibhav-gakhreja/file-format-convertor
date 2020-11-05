@@ -1,5 +1,5 @@
 const formidable = require('formidable')
-const fs = require('fs')
+const fs = require('fs-extra')
 const shell = require('shelljs')
 
 const mp4_to_mp3 = (req,res)=>{

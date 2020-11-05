@@ -1,5 +1,5 @@
 const formidable = require('formidable')
-const fs = require('fs')
+const fs = require('fs-extra')
 const shell = require('shelljs')
 
 const docx_to_pdf = (req,res)=>{
@@ -10,7 +10,7 @@ const docx_to_pdf = (req,res)=>{
         }
         var oldpath = files.filetoupload.path
         var newpath = './input.docx'
-        fs.rename(oldpath, newpath, function(err){
+        fs.copy(oldpath, newpath, function(err){
             if(err){
                 res.send('Error occured, please try again!')
                 return res.end()

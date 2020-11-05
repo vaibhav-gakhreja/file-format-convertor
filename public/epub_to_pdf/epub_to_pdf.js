@@ -1,5 +1,5 @@
 const formidable = require('formidable')
-const fs = require('fs')
+const fs = require('fs-extra')
 const shell = require('shelljs')
 
 const epub_to_pdf = (req,res)=>{

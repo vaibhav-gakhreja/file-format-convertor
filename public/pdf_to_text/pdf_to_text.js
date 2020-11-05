@@ -1,5 +1,5 @@
 const formidable = require('formidable')
-const fs = require('fs')
+const fs = require('fs-extra')
 const execution = require('./scriptExec') 
 
 const pdf_to_text = (req,res)=>{
@@ -10,7 +10,7 @@ const pdf_to_text = (req,res)=>{
         }
         var oldpath = files.filetoupload.path
         var newpath = './input.pdf'
-        fs.rename(oldpath,newpath,function(err){
+        fs.copy(oldpath,newpath,function(err){
             if(err){
                 return res.send('error occured while uploading file. Please refresh and try again.')
             }

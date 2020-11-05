@@ -1,5 +1,5 @@
 const formidable = require('formidable')
-const fs = require('fs')
+const fs = require('fs-extra')
 const execution = require('./scriptExec.js')
 
 const xps_to_pdf = (req,res)=>{
@@ -14,7 +14,7 @@ const xps_to_pdf = (req,res)=>{
         const ry = parseInt(fields.ry)
         var oldpath = files.filetoupload.path
         var newpath = './input.xps'
-        fs.rename(oldpath, newpath, function(err){
+        fs.copy(oldpath, newpath, function(err){
             if(err){
                 res.send('Error occured, please try again!')
                 return res.end()

@@ -1,5 +1,5 @@
 const formidable = require('formidable')
-const fs = require('fs')
+const fs = require('fs-extra')
 const shell = require('shelljs')
 
 const mp4_to_gif = (req,res)=>{
@@ -10,7 +10,7 @@ const mp4_to_gif = (req,res)=>{
         }
         var oldpath = files.filetoupload.path
         var newpath = './input.mp4'
-        fs.rename(oldpath, newpath, function(err){
+        fs.copy(oldpath, newpath, function(err){
             if(err){
                 res.send('Error occured, please try again!')
                 return res.end()
