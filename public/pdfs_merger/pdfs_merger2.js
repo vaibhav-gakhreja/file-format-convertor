@@ -1,5 +1,5 @@
 const formidable = require('formidable')
-const fs = require('fs')
+const fs = require('fs-extra')
 const shell = require('shelljs')
 
 const pdfs_merger = (req,res)=>{
@@ -10,7 +10,7 @@ const pdfs_merger = (req,res)=>{
         }
         var oldpath = files.filetoupload2.path
         var newpath = './input2.pdf'
-        fs.rename(oldpath, newpath, function(err){
+        fs.copy(oldpath, newpath, function(err){
             if(err){
                 res.send('Error occured, please try again!')
                 return res.end()
